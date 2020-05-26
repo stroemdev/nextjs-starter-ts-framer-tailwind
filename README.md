@@ -1,0 +1,1 @@
+# Next.js with TypeScript, tailwindcss and framer-motion boiler plate
