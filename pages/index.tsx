@@ -19,25 +19,19 @@ const title: Variants = {
   }
 }
 
-const a: Variants = {
-  hover: {
-    color: "#ebf8ff"
-  }
-}
-
 function A({ children, ...rest }: PropsWithChildren<{ href: string }>) {
   return (
-    <motion.a {...rest} target="_blank" rel="noreferrer noopener" className="underline" variants={a} whileHover="hover">
+    <a {...rest} target="_blank" rel="noreferrer noopener" className="underline hover:text-gray-300">
       {children}
-    </motion.a>
+    </a>
   )
 }
 
 function Index() {
   return (
-    <div className="w-screen h-screen flex justify-center items-center bg-blue-900">
+    <div className="bg-gradient-to-r from-fuchsia-800 to-orange-600 w-screen h-screen flex justify-center items-center text-gray-100">
       <motion.div className="pb-8" initial="initial" animate="visible" variants={variants}>
-        <motion.h1 className="text-3xl md:text-5xl xl:text-6xl text-blue-200" variants={title}>
+        <motion.h1 className="text-3xl md:text-5xl xl:text-6xl" variants={title}>
           Hello <A href="https://nextjs.org/">Next.js</A>{" "}
           <motion.a
             className="inline-block cursor-pointer"
@@ -51,7 +45,7 @@ function Index() {
             👋
           </motion.a>
         </motion.h1>
-        <motion.h2 className="text-1xl md:text-2xl xl:text-3xl text-blue-200" variants={title}>
+        <motion.h2 className="text-1xl md:text-2xl xl:text-3xl" variants={title}>
           ...with <A href="https://tailwindcss.com/">tailwindcss</A>,{" "}
           <A href="https://www.framer.com/api/motion">framer-motion</A> and{" "}
           <A href="https://www.typescriptlang.org/">typescript!</A>
